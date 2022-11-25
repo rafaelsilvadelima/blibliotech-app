@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Editar Empréstimo</h1>
+    <form>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Leitor</mat-label>
+            <input type="text" matInput placeholder="Leitor">
+          </mat-form-field>
+
+          <div class="double-width">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input type="email" matInput placeholder="E-mail">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input type="text" matInput placeholder="Telefone">
+          </mat-form-field>
+        </div>
+
+        <div class="double-width">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Status</mat-label>
+            <input type="text" matInput placeholder="Status">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Livro</mat-label>
+            <input type="text" matInput placeholder="Livro">
+          </mat-form-field>
+        </div>
+              
+
+          <div class="double-width">
+            <button class="full-width btn-submit" mat-raised-button >Editar</button>
+          </div>
+          
+    </form>
+    <a mat-fab color="primary" class="btn-back" routerLink="/dashboard">
+        <i class="material-icons">arrow_back</i>
+      </a>
+</div>

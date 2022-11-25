@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Painel de Controle</h1>
+    <section class="table-container mat-elevation-z8" tabindex="0">
+        <table mat-table>
+
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef> Titulo </th>
+                <td mat-cell *matCellDef="let controle"> {{controle.titulo}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="categoria">
+                <th mat-header-cell *matHeaderCellDef> Categoria </th>
+                <td mat-cell *matCellDef="let controle"> {{controle.categoria}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="autor">
+                <th mat-header-cell *matHeaderCellDef> Autor </th>
+                <td mat-cell *matCellDef="let controle"> {{controle.autor}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="isbn">
+                <th mat-header-cell *matHeaderCellDef> ISBN </th>
+                <td mat-cell *matCellDef="let controle"> {{controle.usbn}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="excluir">
+                <th mat-header-cell *matHeaderCellDef> Excluir </th>
+                <td mat-cell *matCellDef="let controle">
+                    <button mat-icon-button>
+                        <i class="material-icons">delete</i></button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </section>
+
+    <!-------------------------------------------------------------------------------------------->
+
+    <section class="container2">
+        <form class="fomulario-livro">
+
+            <div class="left">
+                <div class="double-width">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Titulo</mat-label>
+                        <input type="text" matInput placeholder="Titulo">
+                    </mat-form-field>
+                </div>
+                <div class="double-width">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Autor</mat-label>
+                        <input type="text" matInput placeholder="Autor">
+                    </mat-form-field>
+                </div>
+                <div class="double-width">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Categoria</mat-label>
+                        <input type="text" matInput placeholder="Categoria">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="double-width">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>ISBN</mat-label>
+                        <input type="text" matInput placeholder="ISBN">
+                    </mat-form-field>
+                </div>
+
+
+
+                <div class="double-width">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Capa</mat-label>
+                        <input type="text" matInput placeholder="Capa">
+                    </mat-form-field>
+                </div>
+                <div class="double-width">
+                    <button class="full-width btn-submit" mat-raised-button>Adicionar</button>
+                </div>
+            </div>
+
+
+        </form>
+    </section>
+
+    <a mat-fab color="primary" class="btn-new" routerLink="/dashboard/new">
+        <i class="material-icons">add</i>
+    </a>
+
+    <a mat-fab color="primary" class="btn-back" routerLink="/home">
+        <i class="material-icons">arrow_back</i>
+    </a>
+</div>

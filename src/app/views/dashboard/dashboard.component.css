@@ -1,0 +1,29 @@
+.table-container {
+    height: 65vh; 
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .btn-new{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #517fdc;
+  }
+  
+  .btn-back{
+    position: absolute;
+    bottom: 90px;
+    right: 30px;
+  
+    background-color: #517fdc;
+  }

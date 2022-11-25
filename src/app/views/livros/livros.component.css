@@ -1,0 +1,68 @@
+.table-container {
+  height: 40vh;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.btn-new {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: #517fdc;
+}
+
+.btn-back {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+
+  background-color: #517fdc;
+}
+
+.section-form {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 90%, 1400px);
+  margin-top: 5px;
+
+}
+
+.btn-submit {
+  margin-top: 30px;
+  background-color: #6b98f1;
+  color: #ffffff;
+}
+
+.btn-submit:hover {
+  background-color: #587dc8;
+}
+
+.fomulario-livro{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.double-width .full-width{
+  width: 70vh;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
