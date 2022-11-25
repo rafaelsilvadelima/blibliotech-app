@@ -1,16 +1,16 @@
 <app-header></app-header>
 <div id="login-container">
     <div class="login-form">
-        <h1>Login</h1>
-        <button class="btn-img" (click)="logarGoogle()">
+        <h1>Cadastre-se</h1>
+        <button class="btn-img" (click)="cadastrarGoogle()">
             <img class="img" src="assets/icons/google-logo.svg" alt="Logo Google">
-            <p class="btn-text">Continuar com Google</p>
+            <p class="btn-text">Cadastre-se com Google</p>
         </button>
-        <form [formGroup]="formulario">
+        <form [formGroup]="cadastrarFormulario">
             <input type="email" placeholder="E-mail" formControlName="email" required>
             <input type="password" placeholder="Senha" formControlName="senha" required>
-            <button type="submit" (click)="logarEmailSenha()">Entrar</button>
+            <button type="submit" (click)=" cadastrarUsuario()">Cadastrar</button>
         </form>
-        <span>Ainda não é cadastrado? <a routerLink="/cadastrar">Cadastre-se</a></span>
+        <span><a routerLink="/login"> Voltar para Login </a></span>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarComponent } from './views/cadastrar/cadastrar.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 import { HomeComponent } from './views/home/home.component';
@@ -48,6 +49,11 @@ const routes: Routes = [
     path: 'livro',
     component: LivrosComponent,
     title: "Livros | Blibiotech"
+  },
+  {
+    path: 'cadastrar',
+    component: CadastrarComponent,
+    title: "Cadastrar | Blibiotech"
   }
 ];
 

@@ -13,10 +13,17 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 import { LivrosComponent } from './views/livros/livros.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+//import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { CadastrarComponent } from './views/cadastrar/cadastrar.component';
+
 
 @NgModule({
   declarations: [
@@ -28,14 +35,20 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     DashboardComponent,
     NovoEmprestimoComponent,
     EditarEmprestimoComponent,
-    LivrosComponent
+    LivrosComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
   ],
