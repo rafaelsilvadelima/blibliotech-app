@@ -41,6 +41,7 @@ export class NovoEmprestimoComponent implements OnInit {
   public cadastrarEmprestimo():void {
     if(this.formEmprestimo.valid) {
       const emprestimo: Emprestimo = this.formEmprestimo.value
+      emprestimo.dataEmprestimo =  new Date()
       this.emprestimoService.cadastrarEmprestimo(emprestimo).subscribe(resposta=> {
         this.notification.exibirMsg("Empréstimo cadastrado com sucesso!")
         this.router.navigate(["/dashboard"])

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { from , catchError, EMPTY, Observable } from 'rxjs';
+import { from , catchError, EMPTY, Observable, map } from 'rxjs';
 import { Emprestimo } from '../models/emprestimo';
 import { NotificationService } from './notification.service';
 
@@ -29,6 +29,14 @@ export class EmprestimoService {
     public listarEmprestimo():Observable<any> {
       const promessa = this.fireStore.collection('emprestimo').get()
       return from(promessa).pipe(
+        map((resposta: any)=> {
+          return resposta.docs.map((doc: any) => {
+            const emprestimo: Emprestimo = doc.data() as Emprestimo
+            emprestimo.livro.capa = doc.capa;
+            return emprestimo
+          })
+        }),
+
         catchError(error => {
           this.notification.exibirMsg("Errou ao listar objeto.")
           console.error(error)

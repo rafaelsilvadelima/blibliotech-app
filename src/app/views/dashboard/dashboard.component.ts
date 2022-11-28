@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
 
   public listarEmprestimos(): void {
     this.emprestimoService.listarEmprestimo().subscribe(resposta =>{
+      console.log(resposta)
       this.dataSource = resposta
     })
   }
