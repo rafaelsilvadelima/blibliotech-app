@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Emprestimo } from 'src/app/models/emprestimo';
+import { EmprestimoService } from 'src/app/services/emprestimo.service';
 
 
 @Component({
@@ -9,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   displayedColumns = ['leitor', 'livro', 'dataEmprestimo', 'status', 'excluir', 'editar', 'capa'];
 
-  constructor() { }
+  dataSource: Emprestimo [] = []
+  constructor(
+    private emprestimoService: EmprestimoService
+  ) { }
 
   ngOnInit(): void {
+    this.listarEmprestimos()
+  }
+
+  public listarEmprestimos(): void {
+    this.emprestimoService.listarEmprestimo().subscribe(resposta =>{
+      this.dataSource = resposta
+    })
   }
 
 }
