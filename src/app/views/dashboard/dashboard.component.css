@@ -22,6 +22,10 @@
     right: 30px;
     background-color: #8f5c3a;
   }
+  .btn-new:hover {
+
+    background-color: #795137;
+  }
   
   .btn-back{
     position: absolute;
@@ -30,7 +34,15 @@
   
     background-color: #8f5c3a;
   }
+  .btn-back:hover{
+    background-color: #795137;
+  }
 
   .container {
     color: #795137;
+  }
+
+  .capa{
+    width: 80px;
+    border-radius: 5px;
   }

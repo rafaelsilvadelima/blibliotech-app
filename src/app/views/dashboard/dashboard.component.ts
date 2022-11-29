@@ -36,9 +36,8 @@ export class DashboardComponent implements OnInit {
 
   public mostrarInformacoes(livro: Livro): void {
     this.dialog.open(InformacoesLivroComponent, {
-      //objeto de configuração da janela abaixo
       width: "400px",
-      data: livro// data é o atributo para mostrar o dados
+      data: livro
     })
 
   }

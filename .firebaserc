@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bibliotech-app-294ee": {
+      "hosting": {
+        "biblioteca-app": [
+          "bibliotech-app-294ee"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bibliotech-app-294ee"
+  }
+}

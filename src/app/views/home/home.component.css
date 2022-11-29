@@ -13,7 +13,7 @@
 
 .home-container h2 {
     position: absolute;
-    bottom: 250px;
+    bottom: 30vh;
     left: 20%;
     color: #795137;
     display: flex;
@@ -22,7 +22,7 @@
 
 .home-container h1 {
     position: absolute;
-    top: 270px;
+    top: 40vh;
     left: 40px;
     color: #ffffff;
     font-size: 120px;

@@ -33,6 +33,16 @@
     border: none;
     box-shadow: 0 0 10px #7b7b7b;
 }
+.login-form button:hover {
+    width: 100%;
+    height: 60px;
+    background-color: #a57c60;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px #7b7b7b;
+}
+
 
 .login-form form {
     width: 100%;

@@ -31,6 +31,10 @@ table {
   background-color: #8f5c3a;
 }
 
+.btn-back:hover {
+background-color: #704f3a;
+}
+
 .section-form {
   display: flex;
   flex-direction: column;
@@ -46,7 +50,7 @@ table {
 }
 
 .btn-submit:hover {
-  background-color: #587dc8;
+  background-color: #704f3a;
 }
 
 .fomulario-livro{
@@ -72,4 +76,8 @@ table {
 
 .container2 {
   padding-top: 30px;
+}
+
+h1 {
+  color: #804141;
 }
