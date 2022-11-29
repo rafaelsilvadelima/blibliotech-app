@@ -1,11 +1,13 @@
 .table-container {
-  height: 30vh;
+  height: 40vh;
   overflow: auto;
-  background-color: rgb(201, 174, 157);
+
+  border-radius: 10px;
 }
 
 table {
   width: 100%;
+  background-color: rgb(244, 236, 231);
 }
 
 .avatar {
@@ -66,4 +68,8 @@ table {
 .right {
   display: flex;
   flex-direction: column;
+}
+
+.container2 {
+  padding-top: 30px;
 }

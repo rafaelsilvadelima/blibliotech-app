@@ -39,7 +39,7 @@ const routes: Routes = [
     title: "Novo Empréstimo | Blibiotech"
   },
   {
-    path: 'dashboard/edit',
+    path: 'dashboard/edit/:id',
     component: EditarEmprestimoComponent,
     canActivate: [ AuthGuard ],
     title: "Editar Empréstimo | Blibiotech"

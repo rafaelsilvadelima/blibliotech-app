@@ -26,6 +26,17 @@ export class EmprestimoService {
     )
   }
 
+  public atualizarEmprestimo(emprestimo: Emprestimo) {
+    const promessa = this.fireStore.collection('emprestimo').doc(emprestimo.id).update(emprestimo)
+    return from(promessa).pipe(
+      catchError(error => {
+        this.notification.exibirMsg("Erro ao atualizar o empréstimo")
+        console.log(error)
+        return EMPTY
+      })
+    )
+  }
+
     public listarEmprestimos(): Observable<any> {
       const promessa = this.fireStore.collection('emprestimo').get()
       return from(promessa).pipe(
@@ -55,5 +66,22 @@ export class EmprestimoService {
         })
       );
     }
+
+
+    public buscarEmprestimoPorId(id: string): Observable<any> {
+      const promessa =  this.fireStore.collection("emprestimo").doc(id).get();
+      return from(promessa).pipe(
+        map(doc => {
+          const emprestimo: Emprestimo = doc.data() as Emprestimo;
+          emprestimo.id = doc.id
+          return emprestimo;
+        }),
+        catchError(error => {
+          this.notification.exibirMsg("Erro ao buscar o empréstimo");
+          console.error(error);
+          return EMPTY;
+        }))
+    }
+
 
 }

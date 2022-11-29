@@ -10,6 +10,7 @@ export class NotificationService {
 
   public exibirMsg(msg: string): void {
     this.snackBar.open(msg, "Fechar", {
+      duration: 3000,
       horizontalPosition: "center",
       verticalPosition: "bottom",
     })

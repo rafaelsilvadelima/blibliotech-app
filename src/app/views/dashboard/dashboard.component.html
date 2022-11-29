@@ -33,8 +33,8 @@
 
           <ng-container matColumnDef="editar">
             <th mat-header-cell *matHeaderCellDef> Editar </th>
-                <td mat-cell *matCellDef="let emprestimo">
-                    <a mat-icon-button>
+                <td mat-cell *matCellDef="let emprestimo" > 
+                    <a mat-icon-button [routerLink]="['/dashboard/edit', emprestimo.id]">
                         <i class="material-icons">edit</i>
                     </a>
                 </td>

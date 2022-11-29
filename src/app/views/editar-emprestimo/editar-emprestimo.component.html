@@ -1,28 +1,31 @@
 <app-header></app-header>
 <div class="container">
-    <h1>Novo Empréstimo</h1>
-    <form [formGroup]="formEmprestimo">
+    <h1>Editar Empréstimo</h1>
+    <form #formulario="ngForm">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Leitor</mat-label>
-            <input type="text" matInput placeholder="Leitor" formControlName="leitor">
+            <input type="text" matInput placeholder="Leitor"
+             name="leitor" [(ngModel)]="emprestimo.leitor" required>
           </mat-form-field>
 
           <div class="double-width">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input type="email" matInput placeholder="E-mail" formControlName="email">
+            <input type="email" matInput placeholder="E-mail"
+             name="email"  [(ngModel)]="emprestimo.email" required>
           </mat-form-field>
 
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Telefone</mat-label>
-            <input type="text" matInput placeholder="Telefone" formControlName="telefone">
+            <input type="text" matInput placeholder="Telefone" 
+             name="telefone"  [(ngModel)]="emprestimo.telefone" required>
           </mat-form-field>
         </div>
 
         <div class="double-width">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Status</mat-label>
-            <mat-select formControlName="status">
+            <mat-select  name="status"  [(ngModel)]="emprestimo.status">
               <mat-option value="Pendente">
                 Pendente
               </mat-option>
@@ -34,17 +37,13 @@
 
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Livro</mat-label>
-            <mat-select formControlName="livro"> 
-              <mat-option *ngFor="let livro of livros" [value]="livro">
-                {{livro.titulo}}
-              </mat-option>
-            </mat-select>
+            <input type="text" matInput name="livro" disabled [(ngModel)]="emprestimo.livro.titulo"> 
           </mat-form-field>
         </div>
               
 
           <div class="double-width">
-            <button class="full-width btn-submit" mat-raised-button>Cadastrar</button>
+            <button class="full-width btn-submit" mat-raised-button (click)="editarEmprestimo(formulario)">Atualizar</button>
           </div>
           
     </form>

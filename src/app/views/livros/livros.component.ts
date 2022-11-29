@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Livro } from 'src/app/models/livro';
 import { LivroService } from 'src/app/services/livro.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -11,6 +11,9 @@ import { NotificationService } from 'src/app/services/notification.service';
 })
 export class LivrosComponent implements OnInit {
   displayedColumns = ['titulo', 'categoria', 'autor', 'isbn', 'excluir'];
+
+  @ViewChild(FormGroupDirective) formGroupDirective!: FormGroupDirective;
+  //esta diretiva possibilita resetar os validators após submit
 
   public formLivro!: FormGroup
   dataSource: Livro[] = []
@@ -41,6 +44,8 @@ export class LivrosComponent implements OnInit {
     this.livroService.criarLivro(livro).subscribe(resposta => {
       this.notification.exibirMsg("Livro cadastrado com sucesso!")
       this.mostrarLivro()
+      this.formLivro.reset()
+      this.formGroupDirective.resetForm()
     })
     
     } else {
