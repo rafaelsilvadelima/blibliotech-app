@@ -17,7 +17,7 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
-    background-color: #517fdc;
+    background-color: #8f5c3a;
   }
   
   .btn-back{
@@ -25,5 +25,9 @@
     bottom: 90px;
     right: 30px;
   
-    background-color: #517fdc;
+    background-color: #8f5c3a;
+  }
+
+  .container {
+    color: #795137;
   }

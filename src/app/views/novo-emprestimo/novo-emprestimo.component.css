@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #795137;
 }
 .full-width {
     width: 100%;
@@ -10,12 +11,12 @@
 
 .btn-submit {
     margin-top: 30px;
-    background-color: #6b98f1;
+    background-color: #8f5c3a;
     color: #ffffff;
 }
 
 .btn-submit:hover {
-    background-color: #587dc8;
+    background-color: #6b4933;
 }
 
 .btn-close:hover {
@@ -27,6 +28,6 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
-    background-color: #517fdc;
+    background-color: #8f5c3a;
   }
 

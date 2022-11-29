@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './shared/material/material.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
-import { InscricaoComponent } from './views/inscricao/inscricao.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
@@ -23,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { CadastrarComponent } from './views/cadastrar/cadastrar.component';
+import { InformacoesLivroComponent } from './components/informacoes-livro/informacoes-livro.component';
 
 
 @NgModule({
@@ -31,12 +31,12 @@ import { CadastrarComponent } from './views/cadastrar/cadastrar.component';
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    InscricaoComponent,
     DashboardComponent,
     NovoEmprestimoComponent,
     EditarEmprestimoComponent,
     LivrosComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    InformacoesLivroComponent
   ],
   imports: [
     BrowserModule,

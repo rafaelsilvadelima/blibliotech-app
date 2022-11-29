@@ -1,39 +1,50 @@
 <app-header></app-header>
 <div class="container">
-    <h1>Editar Empréstimo</h1>
-    <form>
+    <h1>Novo Empréstimo</h1>
+    <form [formGroup]="formEmprestimo">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Leitor</mat-label>
-            <input type="text" matInput placeholder="Leitor">
+            <input type="text" matInput placeholder="Leitor" formControlName="leitor">
           </mat-form-field>
 
           <div class="double-width">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input type="email" matInput placeholder="E-mail">
+            <input type="email" matInput placeholder="E-mail" formControlName="email">
           </mat-form-field>
 
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Telefone</mat-label>
-            <input type="text" matInput placeholder="Telefone">
+            <input type="text" matInput placeholder="Telefone" formControlName="telefone">
           </mat-form-field>
         </div>
 
         <div class="double-width">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Status</mat-label>
-            <input type="text" matInput placeholder="Status">
+            <mat-select formControlName="status">
+              <mat-option value="Pendente">
+                Pendente
+              </mat-option>
+              <mat-option value="Devolvido">
+                Devolvido
+              </mat-option>
+            </mat-select>
           </mat-form-field>
 
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Livro</mat-label>
-            <input type="text" matInput placeholder="Livro">
+            <mat-select formControlName="livro"> 
+              <mat-option *ngFor="let livro of livros" [value]="livro">
+                {{livro.titulo}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
               
 
           <div class="double-width">
-            <button class="full-width btn-submit" mat-raised-button >Editar</button>
+            <button class="full-width btn-submit" mat-raised-button>Cadastrar</button>
           </div>
           
     </form>

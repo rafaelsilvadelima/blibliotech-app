@@ -4,7 +4,7 @@ mat-toolbar {
     justify-content: space-between;
     position: fixed;
     top:0;
-    background-color: #6B98F1;
+    background-color: #8f5c3a;
     color: #FFFFFF;
 }
 
@@ -16,3 +16,4 @@ mat-toolbar {
 #logout i {
     margin-left: 10px;
 }
+

@@ -15,35 +15,45 @@ export class EmprestimoService {
 
   ) { }
 
-    public cadastrarEmprestimo(emprestimo: Emprestimo): Observable<any> {
-      const promessa = this.fireStore.collection('emprestimo').add(emprestimo)
-      return from(promessa).pipe(
-        catchError(erro => {
-          this.notification.exibirMsg("Erro ao cadastrar empréstimo.")
-          console.error(erro)
-          return EMPTY
-        })
-      )
-    }
+  public cadastrarEmprestimo(emprestimo: Emprestimo): Observable<any> {
+    const promessa = this.fireStore.collection('emprestimo').add(emprestimo)
+    return from(promessa).pipe(
+      catchError(erro => {
+        this.notification.exibirMsg("Erro ao cadastrar empréstimo.")
+        console.error(erro)
+        return EMPTY
+      })
+    )
+  }
 
-    public listarEmprestimo():Observable<any> {
+    public listarEmprestimos(): Observable<any> {
       const promessa = this.fireStore.collection('emprestimo').get()
       return from(promessa).pipe(
-        map((resposta: any)=> {
-          return resposta.docs.map((doc: any) => {
+        map((resposta: any)=>{
+          return resposta.docs.map((doc: any)=> {
             const emprestimo: Emprestimo = doc.data() as Emprestimo
-            emprestimo.livro.capa = doc.capa;
+            emprestimo.id = doc.id
+            console.log(emprestimo)
             return emprestimo
           })
         }),
-
         catchError(error => {
-          this.notification.exibirMsg("Errou ao listar objeto.")
+          this.notification.exibirMsg("Erro ao listar empréstimos")
           console.error(error)
           return EMPTY
-        })
+        })        
       )
     }
 
+    public apagarEmprestimo(id: string) {
+      const promessa =  this.fireStore.collection("emprestimo").doc(id).delete();
+      return from(promessa).pipe(
+        catchError(error => {
+          this.notification.exibirMsg("Erro ao excluir empréstimo.");
+          console.error(error);
+          return EMPTY;
+        })
+      );
+    }
 
 }
